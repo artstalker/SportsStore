@@ -7,6 +7,8 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
+using SportsStore.WebUI.Infrastructure;
+
 namespace SportsStore.WebUI
 {
 	// Note: For instructions on enabling IIS6 or IIS7 classic mode, 
@@ -22,6 +24,8 @@ namespace SportsStore.WebUI
 			FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+			ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
 		}
 	}
 }
