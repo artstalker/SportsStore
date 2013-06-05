@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsStore.WebUI", "Sports
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsStore.WebUI.Tests", "SportsStore.WebUI.Tests\SportsStore.WebUI.Tests.csproj", "{A1A636E8-130B-40A8-9B72-8E4EDA219F23}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{C419301F-C892-4BDF-BD6E-F59A2FCCD6B4}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\dbo.Products.sql = Scripts\dbo.Products.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
