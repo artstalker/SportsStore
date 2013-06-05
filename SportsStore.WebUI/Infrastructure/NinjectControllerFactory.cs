@@ -5,7 +5,13 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
+using Moq;
+
 using Ninject;
+
+using SportsStore.Domain.Abstract;
+using SportsStore.Domain.Concrete;
+using SportsStore.Domain.Entities;
 
 namespace SportsStore.WebUI.Infrastructure
 {
@@ -19,11 +25,12 @@ namespace SportsStore.WebUI.Infrastructure
 		}
 		protected override IController GetControllerInstance(RequestContext requestContext, Type controllerType)
 		{
-			return controllerType == null? null: (IController)ninjectKernel.Get(controllerType);
+			return controllerType == null ? null : (IController)ninjectKernel.Get(controllerType);
 		}
+
 		private void AddBindings()
 		{
-			// put bindings here
+			ninjectKernel.Bind<IProductRepository>().To<EFProductRepository>();
 		}
 	}
 }
